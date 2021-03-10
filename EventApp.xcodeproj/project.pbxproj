@@ -15,6 +15,9 @@
 		639472EF25F8DBC1005D028A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639472ED25F8DBC1005D028A /* LaunchScreen.storyboard */; };
 		639472FA25F8DBC1005D028A /* EventAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639472F925F8DBC1005D028A /* EventAppTests.swift */; };
 		6394730525F8DBC1005D028A /* EventAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394730425F8DBC1005D028A /* EventAppUITests.swift */; };
+		6394731925F8DBE3005D028A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394731825F8DBE3005D028A /* AppCoordinator.swift */; };
+		6394731E25F8DD72005D028A /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394731D25F8DD72005D028A /* EventListCoordinator.swift */; };
+		6394732325F8DDEB005D028A /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394732225F8DDEB005D028A /* EventListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		6394730025F8DBC1005D028A /* EventAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6394730425F8DBC1005D028A /* EventAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAppUITests.swift; sourceTree = "<group>"; };
 		6394730625F8DBC1005D028A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6394731825F8DBE3005D028A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6394731D25F8DD72005D028A /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
+		6394732225F8DDEB005D028A /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				639472EB25F8DBC1005D028A /* Assets.xcassets */,
 				639472ED25F8DBC1005D028A /* LaunchScreen.storyboard */,
 				639472F025F8DBC1005D028A /* Info.plist */,
+				6394731825F8DBE3005D028A /* AppCoordinator.swift */,
+				6394731D25F8DD72005D028A /* EventListCoordinator.swift */,
+				6394732225F8DDEB005D028A /* EventListViewController.swift */,
 			);
 			path = EventApp;
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6394731925F8DBE3005D028A /* AppCoordinator.swift in Sources */,
+				6394732325F8DDEB005D028A /* EventListViewController.swift in Sources */,
 				639472E725F8DBBE005D028A /* ViewController.swift in Sources */,
 				639472E325F8DBBE005D028A /* AppDelegate.swift in Sources */,
 				639472E525F8DBBE005D028A /* SceneDelegate.swift in Sources */,
+				6394731E25F8DD72005D028A /* EventListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99FBQG9WNS;
 				INFOPLIST_FILE = EventApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99FBQG9WNS;
 				INFOPLIST_FILE = EventApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
