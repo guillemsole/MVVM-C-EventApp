@@ -34,7 +34,7 @@ final class EventListCoordinator: Coordinator {
     func childDidFinish(_ childCoordinator: Coordinator) {
         // Remove coordinator from our childCoordinator array
         if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
-            return type(of: coordinator) == type(of: childCoordinator)
+            return coordinator === childCoordinator
         }) {
             childCoordinators.remove(at: index)
         }

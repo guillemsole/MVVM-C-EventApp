@@ -31,9 +31,29 @@
                     <view key="view" contentMode="scaleToFill" id="z4P-GF-t6q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EMP-kt-dgf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oJa-vo-DNo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rac-mF-lxQ"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rac-mF-lxQ" firstAttribute="bottom" secondItem="EMP-kt-dgf" secondAttribute="bottom" id="FNT-9Z-Vvj"/>
+                            <constraint firstItem="EMP-kt-dgf" firstAttribute="top" secondItem="rac-mF-lxQ" secondAttribute="top" id="IGu-wt-luj"/>
+                            <constraint firstItem="rac-mF-lxQ" firstAttribute="trailing" secondItem="EMP-kt-dgf" secondAttribute="trailing" id="SQf-HB-BHR"/>
+                            <constraint firstItem="EMP-kt-dgf" firstAttribute="leading" secondItem="rac-mF-lxQ" secondAttribute="leading" id="qfp-pQ-UZB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="oJa-vo-DNo" id="2gC-1v-9Tf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8p-4f-SIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,8 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
