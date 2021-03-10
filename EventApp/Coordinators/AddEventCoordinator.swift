@@ -34,7 +34,4 @@ final class AddEventCoordinator: Coordinator {
         parentCoordinator?.childDidFinish(self)
     }
     
-    deinit {
-        print("deinit from add event coordinator")
-    }
 }
