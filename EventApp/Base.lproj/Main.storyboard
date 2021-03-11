@@ -74,6 +74,41 @@
             </objects>
             <point key="canvasLocation" x="716" y="100"/>
         </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="G7W-Gt-sk5">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iLk-4n-Ypz" customClass="EventDetailViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gAT-DO-aWS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-h2-EqH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WU1-67-EWa" customClass="TimeRemainingStackView" customModule="EventApp" customModuleProvider="target">
+                                <rect key="frame" x="152" y="348" width="110" height="200"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bgs-ch-8wA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5mj-h2-EqH" firstAttribute="leading" secondItem="gAT-DO-aWS" secondAttribute="leading" id="C5G-ee-Yry"/>
+                            <constraint firstAttribute="bottom" secondItem="5mj-h2-EqH" secondAttribute="bottom" id="GuV-J7-kwB"/>
+                            <constraint firstItem="WU1-67-EWa" firstAttribute="centerY" secondItem="gAT-DO-aWS" secondAttribute="centerY" id="Mnv-sJ-sDX"/>
+                            <constraint firstItem="5mj-h2-EqH" firstAttribute="top" secondItem="gAT-DO-aWS" secondAttribute="top" id="NF7-yM-T7d"/>
+                            <constraint firstItem="WU1-67-EWa" firstAttribute="centerX" secondItem="gAT-DO-aWS" secondAttribute="centerX" id="cTf-L9-iX4"/>
+                            <constraint firstAttribute="trailing" secondItem="5mj-h2-EqH" secondAttribute="trailing" id="jlZ-yy-S1b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="5mj-h2-EqH" id="JP6-lf-qHI"/>
+                        <outlet property="timeRemainingStackView" destination="WU1-67-EWa" id="YQg-Od-jIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nzp-jA-Nd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="101"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
