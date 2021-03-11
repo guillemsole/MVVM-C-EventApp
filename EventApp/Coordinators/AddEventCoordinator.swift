@@ -27,6 +27,7 @@ final class AddEventCoordinator: Coordinator {
         let addEventViewModel = AddEventViewModel(cellBuilder: EventsCellBuilder(), coreDataManager: CoreDataManager())
         addEventViewModel.coordinator = self
         addEventViewController.viewModel = addEventViewModel
+        
         // present modally controller using navigation controller
         if let modalNavigationController = modalNavigationController {
             navigationController.present(modalNavigationController, animated: true, completion: nil)

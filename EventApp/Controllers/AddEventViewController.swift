@@ -50,7 +50,7 @@ class AddEventViewController: UIViewController {
         
         // To force large titles
         tableView.contentInsetAdjustmentBehavior = .never
-        tableView.setContentOffset(.init(x: 0, y: -1), animated: false)
+        tableView.setNeedsLayout()
     }
 }
 

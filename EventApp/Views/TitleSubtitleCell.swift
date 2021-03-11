@@ -44,6 +44,8 @@ final class TitleSubtitleCell: UITableViewCell {
         subtitleTextField.inputView = viewModel.type == .text ? nil : datePickerView
         subtitleTextField.inputAccessoryView = viewModel.type == .text ? nil : toolbar
         
+        datePickerView.preferredDatePickerStyle = .wheels
+        
         photoImageView.isHidden = viewModel.type != .image
         subtitleTextField.isHidden = viewModel.type == .image
         
