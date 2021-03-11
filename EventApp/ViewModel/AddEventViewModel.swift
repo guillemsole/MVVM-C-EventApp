@@ -17,7 +17,7 @@ final class AddEventViewModel {
     }
 
     private(set) var cells: [Cell] = []
-    var coordinator: AddEventCoordinator?
+    weak var coordinator: AddEventCoordinator?
     
     private var nameCellViewModel: TitleSubtitleCellViewModel?
     private var dateCellViewModel: TitleSubtitleCellViewModel?
@@ -84,7 +84,6 @@ final class AddEventViewModel {
             }
         }
     }
-
 }
 
 private extension AddEventViewModel {
