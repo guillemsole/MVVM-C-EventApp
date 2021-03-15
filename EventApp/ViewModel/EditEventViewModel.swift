@@ -8,7 +8,7 @@
 import UIKit
 
 final class EditEventViewModel {
-    let title = "Add"
+    let title = "Edit"
     
     var onUpdate: () -> Void = {}
 
@@ -22,9 +22,9 @@ final class EditEventViewModel {
     private var nameCellViewModel: TitleSubtitleCellViewModel?
     private var dateCellViewModel: TitleSubtitleCellViewModel?
     private var backgroundImageCellViewModel: TitleSubtitleCellViewModel?
-    private var cellBuilder: EventsCellBuilder
-    private var coreDataManager: CoreDataManager
-    
+    private let cellBuilder: EventsCellBuilder
+    private let eventService: EventServiceProtocol
+    private let event: Event
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -32,9 +32,10 @@ final class EditEventViewModel {
         return dateFormatter
     }()
     
-    init(cellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager = .shared) {
+    init(event: Event, cellBuilder: EventsCellBuilder, eventService: EventServiceProtocol = EventService()) {
+        self.event = event
         self.cellBuilder = cellBuilder
-        self.coreDataManager = coreDataManager
+        self.eventService = eventService
     }
     
     func viewDidLoad() {
@@ -61,8 +62,15 @@ final class EditEventViewModel {
               let date = dateFormatter.date(from: dateString)
             else { return }
         
-        coreDataManager.saveEvent(name: name, date: date, image: image)
-        coordinator?.didFinishSaveEvent()
+        eventService.perform(
+            .update(event),
+            data: EventService.EventInputData(
+                name: name,
+                date: date,
+                image: image
+            )
+        )
+        coordinator?.didFinishUpdateEvent()
     }
     
     func updateCell(indexPath: IndexPath, subtitle: String) {
@@ -111,5 +119,15 @@ private extension EditEventViewModel {
                 backgroundImageCellViewModel
             )
         ]
+        
+        guard let name = event.name,
+              let date = event.date,
+              let imageData = event.image,
+              let image = UIImage(data: imageData)
+            else { return }
+        
+        nameCellViewModel.update(name)
+        dateCellViewModel.update(date)
+        backgroundImageCellViewModel.update(image)
     }
 }

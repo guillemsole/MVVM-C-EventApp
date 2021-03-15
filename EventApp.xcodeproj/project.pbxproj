@@ -43,6 +43,7 @@
 		6397073E25FA36D0004B251C /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397073D25FA36D0004B251C /* EditEventCoordinator.swift */; };
 		6397074325FA372E004B251C /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397074225FA372E004B251C /* EditEventViewController.swift */; };
 		6397074825FA381F004B251C /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397074725FA381F004B251C /* EditEventViewModel.swift */; };
+		63E3F89B25FF67F700EF727B /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3F89A25FF67F700EF727B /* EventService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		6397073D25FA36D0004B251C /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
 		6397074225FA372E004B251C /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		6397074725FA381F004B251C /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
+		63E3F89A25FF67F700EF727B /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		639472E125F8DBBE005D028A /* EventApp */ = {
 			isa = PBXGroup;
 			children = (
+				63E3F89925FF67EA00EF727B /* Services */,
 				639706F225F90E8B004B251C /* Views */,
 				6394732C25F8E4B9005D028A /* Extensions */,
 				6394732D25F8E4C5005D028A /* Controllers */,
@@ -250,6 +253,14 @@
 				6397073325FA2967004B251C /* TimeRemainingStackView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		63E3F89925FF67EA00EF727B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63E3F89A25FF67F700EF727B /* EventService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E3F89B25FF67F700EF727B /* EventService.swift in Sources */,
 				6397071325F9FED8004B251C /* UIView+Extensions.swift in Sources */,
 				6397071B25FA1123004B251C /* Date+Extensions.swift in Sources */,
 				6397073E25FA36D0004B251C /* EditEventCoordinator.swift in Sources */,

@@ -11,15 +11,16 @@ final class EditEventCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
     private var completion: (UIImage) -> Void = {_ in }
-    var parentCoordinator: EventListCoordinator?
-    
-    init(navigationController: UINavigationController) {
+    var parentCoordinator: EventDetailCoordinator?
+    private let event: Event
+    init(event: Event, navigationController: UINavigationController) {
+        self.event = event
         self.navigationController = navigationController
     }
     
     func start() {
         let editEventViewController: EditEventViewController = .instantiate()
-        let editEventViewModel = EditEventViewModel(cellBuilder: EventsCellBuilder())
+        let editEventViewModel = EditEventViewModel(event: event, cellBuilder: EventsCellBuilder())
         editEventViewModel.coordinator = self
         editEventViewController.viewModel = editEventViewModel
         navigationController.pushViewController(editEventViewController, animated: true)
@@ -29,10 +30,9 @@ final class EditEventCoordinator: Coordinator {
         parentCoordinator?.childDidFinish(self)
     }
     
-    func didFinishSaveEvent() {
-        parentCoordinator?.onSaveEvent()
-        navigationController.dismiss(animated: true, completion: nil)
-        
+    func didFinishUpdateEvent() {
+        navigationController.popViewController(animated: true)
+        parentCoordinator?.onUpdateEvent()
     }
     
     func showImagePicker(completion: @escaping (UIImage) -> Void) {
@@ -41,6 +41,7 @@ final class EditEventCoordinator: Coordinator {
         imagePickerCoordinator.parentCoordinator = self
         imagePickerCoordinator.onFinishPicking = { image in
             completion(image)
+            self.navigationController.dismiss(animated: true, completion: nil)
         }
         childCoordinators.append(imagePickerCoordinator)
         imagePickerCoordinator.start()
